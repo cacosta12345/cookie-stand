@@ -1,8 +1,8 @@
-# LAB - 6
+# LAB - 7
 
 ## Cookie-Stand
 
-This is the cookie-stand project, first day. Added the city objects, rendered sales data for each city using given data and math.random method.
+This is the cookie-stand project, second day. Added table to sales data, refactored js files.
 
 ### Author: Christopher Acosta
 
@@ -10,18 +10,20 @@ This is the cookie-stand project, first day. Added the city objects, rendered sa
 
 ### Lighthouse Accessibility Report Score
 
-* Lighthouse score for Lab 6!
+* Lighthouse score for Lab 7!
 
-  ![Lighthouse Score](images/cookiestandlighthouse.PNG)
+  ![Lighthouse Score](images/lab7lighthouse.PNG)
 
 ### Reflections and Comments
 
 #### Reading Journal entry:
 
-* The lab was kind of difficult. I had to do some research on how to generate the sales data and render it onto the dom. ChatGPT helped me with the function to get the random data, and my brother helped with come up with the for loop to get that data and append it to my cards as list items. It took about 4-5 hours to complete this part.
+* The lab was difficult. Adding tables is hard, rendering them correctly is harder. I managed to get the functions working following John's in class templates. The function to get the hourly totals for all locations was confusing. A TA helped me with that. I still need to include the overal total cell in the table. The home page still needs work. I remade my whole sales.html and sales.js and got rid of the old ones to reduce clutter.
 
 #### Notes
 
-* Trying to find a way to write a function where I could input any city and populate the stats on the dom. I tried with a testCity but it didn't work so I commented the function out on my js file.
+* Still need a way to add last cell to table
 
-* After lots of trial and error, and with help from chatGPT, I got the populate cityStats function to work! As long as I have a card in the html file with a specific id ("city"Card).
+* Still need work on my home page
+
+* Still need to tweek some CSS
