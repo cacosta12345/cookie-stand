@@ -6,6 +6,8 @@ function Store(name,min, max, avg, estimatedSales){
   this.estimatedSales = estimatedSales;
 }
 
+let totals = new Array().fill(0);
+
 let seattle = new Store('Seattle',23,65,6.3, []);
 let tokyo = new Store('Tokyo',3,24,1.2,[]);
 let dubai = new Store('Dubai',11,38,3.7, []);
@@ -22,8 +24,8 @@ function random(min, max){
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-
-Store.prototype.renderStore = function(store){
+// render to table
+Store.prototype.renderStore = function(){
   let body = document.getElementById('stores');
   let storeRow = document.createElement('tr');
   body.appendChild(storeRow);
@@ -33,16 +35,18 @@ Store.prototype.renderStore = function(store){
   storeRow.appendChild(nameCell);
   let total = 0;
   for( let i = 0; i < hoursOpen.length; i++ ) {
-    total += store.estimatedSales[i];
+    total += this.estimatedSales[i];
     let cell = document.createElement('td');
-    cell.textContent = `${store.estimatedSales[i]}`;
+    cell.textContent = `${this.estimatedSales[i]}`;
     storeRow.appendChild(cell);
   }
+  // grandTotal += total;
   const totalElement= document.createElement('td');
   totalElement.textContent = `${total}`;
   storeRow.appendChild(totalElement);
 };
 
+//gets random numbers for each city
 Store.prototype.estimateSales = function(currentStore){
   let estimatedSales = [];
   for (let i = 0; i < hoursOpen.length; i++) {
@@ -53,15 +57,13 @@ Store.prototype.estimateSales = function(currentStore){
   return estimatedSales;
 };
 
-
 for (let i = 0; i < stores.length; i++) {
   let currentStore = stores[i];
   currentStore.estimatedSales = currentStore.estimateSales(currentStore);
   currentStore.renderStore(currentStore);
 }
-
+// last row - total hourly totals
 function hourlyTotals(){
-  let totals = [];
   for (let i = 0; i < hoursOpen.length; i++) {
     let ourTotal = 0;
     for (let j = 0; j < stores.length; j++) {
@@ -85,7 +87,13 @@ function renderHourlyTotals(){
     cell.textContent = `${totals[i]}`;
     row.appendChild(cell);
   }
+
+  //reduce method needs a function and starting number as parameters//( (a,b) => a+b, 0  )
+  let grandTotal = totals.reduce((accumulator, currentValue)=>accumulator+ currentValue, 0);
+  let grandTotalCell = document.createElement('td');
+  grandTotalCell.textContent= `${grandTotal}`;
+  row.appendChild(grandTotalCell);
 }
 renderHourlyTotals();
 
-// //Make New Array
+
