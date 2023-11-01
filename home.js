@@ -1,71 +1,56 @@
+function Store(name, address, hoursOpen, contactInfo){
+  this.name = name;
+  this.address = address;
+  this.hoursOpen = hoursOpen;
+  this.contactInfo = contactInfo;
+}
 
-const seattle = {
-  name: 'Seattle',
-  phoneNumbers: ['Main: 555-1212', 'Fax: 555-6363'],
-  render: function() {
-    // Looks for any element with an id="root", i.e.
-    // <section id="root">
-    const rootElement = document.getElementById('root');
+let seattle = new Store('Seattle', '111 seattle ave', '6am - 6pm', '111-222-3333');
+let tokyo = new Store('Tokyo', '222 tokyo blvd', '6am - 6pm', '123-456-7891');
+let dubai = new Store('Dubai', '333 dubai rd', '6am - 6pm', '128-296-6541');
+let paris = new Store('Paris', '605 paris st', '6am - 6pm', '123-456-7891');
+let lima = new Store('Lima', '852 lima ave', '6am - 6pm', '987-654-');
 
-    // Create a new, empty section for a store
-    const storeSection = document.createElement('section');
-    storeSection.classList.add('location');
-    rootElement.appendChild(storeSection);
+let stores = new Array().fill(0);
 
-    const firstTitle = document.createElement('h2');
-    // Give it some content
-    firstTitle.textContent = this.name;
-    // Add it to the page, as a child of rootElement
-    storeSection.appendChild(firstTitle);
+stores.push(seattle);
+stores.push(tokyo);
+stores.push(dubai);
+stores.push(paris);
+stores.push(lima);
 
-    // Add a unordered list to show the address...
-    const storeDataList = document.createElement('ul');
-    storeSection.appendChild(storeDataList);
 
-    // Put the phone numbers in the UL
-    for( let i=0; i<this.phoneNumbers.length; i++ ) {
-      const phoneItem = document.createElement('li');
-      // Add the actual number, from the store object
-      phoneItem.textContent = this.phoneNumbers[i];
-      // Append that to the UL
-      storeDataList.appendChild(phoneItem);
-    }
-  }
+
+Store.prototype.renderStore = function(){
+  let rootElement = document.getElementById('root');
+  let storeSection = document.createElement('section');
+  rootElement.appendChild(storeSection);
+
+  let firstTitle = document.createElement('h2');
+  firstTitle.textContent = this.name;
+  storeSection.appendChild(firstTitle);
+
+  let storeInfo = document.createElement('ul');
+  storeSection.appendChild(storeInfo);
+
+  let storeAddress = document.createElement('li')
+  storeAddress.textContent = `Address: ${this.address}`;
+  storeInfo.appendChild(storeAddress);
+
+  let storeHours = document.createElement('li');
+  storeHours.textContent = `Hours: ${this.hoursOpen}`;
+  storeInfo.appendChild(storeHours);
+
+  let storeContact = document.createElement('li');
+  storeContact.textContent = `Contact: ${this.contactInfo}`;
+  storeInfo.appendChild(storeContact);
 };
 
-const tokyo = {
-  name: 'Tokyo',
-  phoneNumbers: ['Main: 333-1212', 'Fax: 333-6363'],
-  render: function() {
-    // Looks for any element with an id="root", i.e.
-    // <section id="root">
-    const rootElement = document.getElementById('root');
-
-    // Create a new, empty section for a store
-    const storeSection = document.createElement('section');
-    rootElement.appendChild(storeSection);
-
-    const firstTitle = document.createElement('h2');
-    // Give it some content
-    firstTitle.textContent = this.name;
-    // Add it to the page, as a child of rootElement
-    storeSection.appendChild(firstTitle);
-
-    // Add a unordered list to show the address...
-    const storeDataList = document.createElement('ul');
-    storeSection.appendChild(storeDataList);
-
-    // Put the phone numbers in the UL
-    for( let i=0; i<this.phoneNumbers.length; i++ ) {
-      const phoneItem = document.createElement('li');
-      // Add the actual number, from the store object
-      phoneItem.textContent = this.phoneNumbers[i];
-      // Append that to the UL
-      storeDataList.appendChild(phoneItem);
-    }
-  }
+for (let i = 0; i < stores.length; i++) {
+  stores[i].renderStore();
 }
 
 
-seattle.render();
-tokyo.render();
+
+// seattle.render();
+// tokyo.render();
