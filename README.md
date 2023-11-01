@@ -8,6 +8,10 @@ This is the cookie-stand project, third day. Finished sales data table, added mo
 
 ### Links and Resources
 
+* [Reduce method in JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
+
+This helped me today
+
 ### Lighthouse Accessibility Report Score
 
 * Lighthouse score for Lab 8!
