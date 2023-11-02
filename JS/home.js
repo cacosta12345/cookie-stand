@@ -52,5 +52,3 @@ for (let i = 0; i < stores.length; i++) {
 
 
 
-// seattle.render();
-// tokyo.render();

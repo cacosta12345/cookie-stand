@@ -21,38 +21,60 @@
      </nav>
   </header>
     <main>
-      <table id="myTable">
-        <thead>
-          <tr>
-            <th>Locations</th>
-            <th>6am</th>
-            <th>7am</th>
-            <th>8am</th>
-            <th>9am</th>
-            <th>10am</th>
-            <th>11am</th>
-            <th>12pm</th>
-            <th>1pm</th>
-            <th>2pm</th>
-            <th>3pm</th>
-            <th>4pm</th>
-            <th>5pm</th>
-            <th>6pm</th>
-            <th>Location Totals</th>
-          </tr>
-        </thead>
-        <tbody id="stores">
+      <section class="formSection">
+        <h2>Add a New Store to the Table</h2>
+        <form id="storeForm">
+          <label for="locationName">Location Name</label>
+          <input id="locationName" type="text" required>
 
-        </tbody>
-        <tfoot id="hourTotals">
+          <label for="minCust">Minimum Customers Per Hour</label>
+          <input id="minCust" type="number" required>
 
-        </tfoot>
-      </table>
+          <label for="maxCust">Max Customers Per Hour</label>
+          <input id="maxCust" type="number" required>
+
+          <label for="avgCookies">Avg Cookies Per Sale</label>
+          <input id="avgCookies" type="number" required>
+
+          <button type="submit">Click here to Add</button>
+        </form>
+      </section>
+
+      <section class="tableSection">
+        <table id="myTable">
+          <thead>
+            <tr>
+              <th>Locations</th>
+              <th>6am</th>
+              <th>7am</th>
+              <th>8am</th>
+              <th>9am</th>
+              <th>10am</th>
+              <th>11am</th>
+              <th>12pm</th>
+              <th>1pm</th>
+              <th>2pm</th>
+              <th>3pm</th>
+              <th>4pm</th>
+              <th>5pm</th>
+              <th>6pm</th>
+              <th>Location Totals</th>
+            </tr>
+          </thead>
+          <tbody id="stores">
+
+          </tbody>
+          <tfoot id="hourTotals">
+
+          </tfoot>
+        </table>
+
+      </section>
     </main>
     <footer>
       <span> &copy; 2023 Pat's Salmon Cookies</span>
     </footer>
-    <script src="sales2.js"></script>
+    <script src="JS/sales2.js"></script>
 
 </body>
 </html>

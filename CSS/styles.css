@@ -46,7 +46,7 @@ table {
 
 th {
   background-color: rgb(126, 126, 126);
-  padding: .3em;
+  padding: .5em;
   font-weight: bold;
   color: rgb(236, 236, 236);
 }
@@ -68,17 +68,58 @@ tfoot td {
 
 main {
   margin: 2em;
+}
+
+main section.formSection {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  border-color: #111;
+  border-style: solid;
+  border-width: 1px;
+  max-width: fit-content;
+  margin: 0 auto;
+}
+
+main section.formSection h2 {
+  position: absolute;
+  left: 10px;
+  background-color: white;
+  font-size: 15pt;
+  padding: 10px;
+  color: salmon;
+  top: 0;
+  transform: translateY(-50%);
+}
+
+main form input {
+  margin: 10px;
+}
+
+main form {
+  display: flex;
+
+  padding: 25px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+section.hero {
+  border-block-end: solid;
+  display: flex;
+  justify-content: center;
+
 
 }
 
-section.hero {
-  border-block-end: solid;
-
+section.tableSection {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
 }
 
 section ul {
   font-family: Arial, Helvetica, sans-serif;
-  margin: .5em;
 }
 
 section ul li {
@@ -102,6 +143,9 @@ section li {
 }
 footer {
   background-color: rgb(168, 167, 167);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -109,7 +153,6 @@ footer {
   font-size: 20px;
   font-family: Georgia, 'Times New Roman', Times, serif;
   height: 50px;
-
 }
 
 tr > td:last-of-type {
@@ -117,6 +160,7 @@ tr > td:last-of-type {
   border: none;
   color: rgb(236, 236, 236);
 }
+
 
 
 
