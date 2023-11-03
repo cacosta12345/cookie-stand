@@ -146,7 +146,6 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
   bottom: 0;
   width: 100%;
   text-align: center;
@@ -160,6 +159,7 @@ tr > td:last-of-type {
   border: none;
   color: rgb(236, 236, 236);
 }
+
 
 
 
